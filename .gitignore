@@ -1,0 +1,22 @@
+# Ignore OS junk
+.DS_Store
+Thumbs.db
+
+# Ignore SSH keys
+*.pem
+*.key
+
+# Ignore Python virtual environments
+venv/
+__pycache__/
+
+# Ignore Terraform state files (if used)
+*.tfstate
+*.tfstate.backup
+
+# Ignore logs
+*.log
+
+# Ignore editor-specific files
+.vscode/
+.idea/
