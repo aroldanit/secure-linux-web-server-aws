@@ -1,0 +1,40 @@
+# Manual Infrastructure Setup Notes
+## Secure Linux Web Server on AWS
+
+These notes document the exact steps taken to deploy and harden a Linux web server on AWS.  
+This project demonstrates cloud infrastructure setup, Linux administration, and basic security hardening.
+
+---
+
+# 1. AWS Infrastructure Setup
+
+## 1.1. Create EC2 Instance
+
+### Steps:
+1. Navigate to **AWS Console → EC2 → Launch Instance**
+2. Select AMI:
+   - **Ubuntu Server 22.04 LTS** (or Amazon Linux 2023)
+3. Instance Type:
+   - `t2.micro` or `t3.micro` (free-tier friendly)
+4. Key Pair:
+   - Create a new SSH key (`.pem`) and store it securely.
+5. Network Settings:
+   - VPC: default or custom
+   - Subnet: **public subnet** (auto-assign public IP enabled)
+6. Security Group:
+   - Create new SG: `secure-linux-web-sg`
+   - Inbound rules:
+     - **SSH (22)** → My IP only
+     - **HTTP (80)** → 0.0.0.0/0
+7. Storage:
+   - 8–16 GB gp3 disk
+8. Launch the instance.
+
+---
+
+# 2. Connecting to the Server
+
+## 2.1. SSH Command
+
+```bash
+ssh -i /path/to/key.pem ubuntu@<ec2-public-ip>
