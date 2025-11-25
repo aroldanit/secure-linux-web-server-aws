@@ -1,22 +1,78 @@
-# Ignore OS junk
+# ----------------------------
+# OS / SYSTEM FILES
+# ----------------------------
 .DS_Store
 Thumbs.db
 
-# Ignore SSH keys
-*.pem
-*.key
-
-# Ignore Python virtual environments
-venv/
-__pycache__/
-
-# Ignore Terraform state files (if used)
-*.tfstate
-*.tfstate.backup
-
-# Ignore logs
-*.log
-
-# Ignore editor-specific files
+# ----------------------------
+# EDITOR / IDE FILES
+# ----------------------------
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# ----------------------------
+# LOGS
+# ----------------------------
+*.log
+logs/
+*.out
+*.err
+
+# ----------------------------
+# PYTHON (if you add scripts later)
+# ----------------------------
+__pycache__/
+*.pyc
+*.pyo
+env/
+venv/
+
+# ----------------------------
+# BASH / SHELL
+# ----------------------------
+*.sh~
+*.tmp
+
+# ----------------------------
+# AWS / SECURITY
+# NEVER commit AWS credentials or SSH keys
+# ----------------------------
+*.pem
+*.key
+.aws/
+*.credentials
+credentials
+id_rsa
+id_rsa.pub
+
+# ----------------------------
+# TERRAFORM (future-proofing)
+# If you add IaC later, these files MUST be ignored
+# ----------------------------
+*.tfstate
+*.tfstate.backup
+.terraform/
+terraform.tfvars
+terraform.tfvars.json
+
+# ----------------------------
+# NODE / NPM (if you add frontend)
+# ----------------------------
+node_modules/
+
+# ----------------------------
+# ZIP / ARCHIVES (lambda deployment packages, etc.)
+# ----------------------------
+*.zip
+*.tar
+*.gz
+*.tgz
+
+# ----------------------------
+# GENERAL TEMP FILES
+# ----------------------------
+*.tmp
+*.bak
+~*
